@@ -22,7 +22,7 @@
 
   
 
-  <title>洛谷P5832题解 | 系稻谷啊</title>
+  <title>洛谷P8813题解 | 系稻谷啊</title>
 
   
 
@@ -99,7 +99,7 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">洛谷P5832题解</h1>
+          <h1 class="title-wrap">洛谷P8813题解</h1>
           <h2 class="title-sub-wrap">
             <strong>bilibili_daogu</strong>
             <span>发布于</span>
@@ -108,11 +108,11 @@
           
             <h2 class="last-time">
               <span>最后更新于</span>
-              <time  class="article-updated" datetime="2024-08-08T08:14:57.095Z" itemprop="dateUpdated">2024-08-08</time>
+              <time  class="article-updated" datetime="2024-08-09T06:46:49.507Z" itemprop="dateUpdated">2024-08-09</time>
             </h2>
           
           
-            <h2 id="/2020/03/01/%E6%B4%9B%E8%B0%B7P5832%E9%A2%98%E8%A7%A3/" class="title-sub-wrap leancloud_visitors" data-flag-title="洛谷P5832题解">
+            <h2 id="/2020/03/01/%E6%B4%9B%E8%B0%B7P8813%E9%A2%98%E8%A7%A3/" class="title-sub-wrap leancloud_visitors" data-flag-title="洛谷P8813题解">
               <em>文章访问量</em>
               <i class="leancloud-visitors-count"></i>
             </h2>
@@ -146,19 +146,24 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h1 id="USACO19DEC-Where-Am-I-B"><a href="#USACO19DEC-Where-Am-I-B" class="headerlink" title="[USACO19DEC] Where Am I? B"></a>[USACO19DEC] Where Am I? B</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>Farmer John 出门沿着马路散步，但是他现在发现可能迷路了！</p>
-<p>沿路有一排共 N 个农场。不幸的是农场并没有编号，这使得 Farmer John 难以分辨他在这条路上所处的位置。然而，每个农场都沿路设有一个彩色的邮箱，所以 Farmer John 希望能够通过查看最近的几个邮箱的颜色来唯一确定他所在的位置。</p>
-<p>每个邮箱的颜色用 A..Z 之间的一个字母来指定，所以沿着道路的 N 个邮箱的序列可以用一个长为 N 的由字母 A..Z 组成的字符串来表示。某些邮箱可能会有相同的颜色。Farmer John 想要知道最小的 K 的值，使得他查看任意连续 K 个邮箱序列，他都可以唯一确定这一序列在道路上的位置。</p>
-<p>例如，假设沿路的邮箱序列为 <code>ABCDABC</code> 。Farmer John 不能令 K&#x3D;3，因为如果他看到了 <code>ABC</code>，沿路有两个这一连续颜色序列可能所在的位置。最小可行的 K 的值为 K&#x3D;4，因为如果他查看任意连续 4 个邮箱，这一颜色序列可以唯一确定他在道路上的位置。</p>
-<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>输入的第一行包含 N，第二行包含一个由 N 个字符组成的字符串，每个字符均在 A..Z 之内。</p>
-<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>输出一行，包含一个整数，为可以解决 Farmer John 的问题的最小 K 值。</p>
-<h2 id="样例-1"><a href="#样例-1" class="headerlink" title="样例 #1"></a>样例 #1</h2><h3 id="样例输入-1"><a href="#样例输入-1" class="headerlink" title="样例输入 #1"></a>样例输入 #1</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">7</span><br><span class="line">ABCDABC</span><br></pre></td></tr></table></figure>
+        <h1 id="CSP-J-2022-乘方"><a href="#CSP-J-2022-乘方" class="headerlink" title="[CSP-J 2022] 乘方"></a>[CSP-J 2022] 乘方</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>小文同学刚刚接触了信息学竞赛，有一天她遇到了这样一个题：给定正整数 $a$ 和 $b$，求 $a^b$ 的值是多少。</p>
+<p>$a^b$ 即 $b$ 个 $a$ 相乘的值，例如 $2^3$ 即为 $3$ 个 $2$ 相乘，结果为 $2 \times 2 \times 2 &#x3D; 8$。</p>
+<p>“简单！”小文心想，同时很快就写出了一份程序，可是测试时却出现了错误。</p>
+<p>小文很快意识到，她的程序里的变量都是 <code>int</code> 类型的。在大多数机器上，<code>int</code> 类型能表示的最大数为 $2^{31} - 1$，因此只要计算结果超过这个数，她的程序就会出现错误。</p>
+<p>由于小文刚刚学会编程，她担心使用 <code>int</code> 计算会出现问题。因此她希望你在 $a^b$ 的值超过 ${10}^9$ 时，输出一个 <code>-1</code> 进行警示，否则就输出正确的 $a^b$ 的值。</p>
+<p>然而小文还是不知道怎么实现这份程序，因此她想请你帮忙。</p>
+<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>输入共一行，两个正整数 $a, b$。</p>
+<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>输出共一行，如果 $a^b$ 的值不超过 ${10}^9$，则输出 $a^b$ 的值，否则输出 <code>-1</code>。</p>
+<h2 id="样例-1"><a href="#样例-1" class="headerlink" title="样例 #1"></a>样例 #1</h2><h3 id="样例输入-1"><a href="#样例输入-1" class="headerlink" title="样例输入 #1"></a>样例输入 #1</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">10 9</span><br></pre></td></tr></table></figure>
 
-<h3 id="样例输出-1"><a href="#样例输出-1" class="headerlink" title="样例输出 #1"></a>样例输出 #1</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4</span><br></pre></td></tr></table></figure>
+<h3 id="样例输出-1"><a href="#样例输出-1" class="headerlink" title="样例输出 #1"></a>样例输出 #1</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1000000000</span><br></pre></td></tr></table></figure>
 
-<h2 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1≤N≤100。</span><br></pre></td></tr></table></figure>
+<h2 id="样例-2"><a href="#样例-2" class="headerlink" title="样例 #2"></a>样例 #2</h2><h3 id="样例输入-2"><a href="#样例输入-2" class="headerlink" title="样例输入 #2"></a>样例输入 #2</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">23333 66666</span><br></pre></td></tr></table></figure>
 
+<h3 id="样例输出-2"><a href="#样例输出-2" class="headerlink" title="样例输出 #2"></a>样例输出 #2</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-1</span><br></pre></td></tr></table></figure>
 
+<h2 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h2><p>对于 $10 %$ 的数据，保证 $b &#x3D; 1$。<br>对于 $30 %$ 的数据，保证 $b \le 2$。<br>对于 $60 %$ 的数据，保证 $b \le 30$，$a^b \le {10}^{18}$。<br>对于 $100 %$ 的数据，保证 $1 \le a, b \le {10}^9$。</p>
+<p>$\text{upd 2022.11.14}$：新增加一组 $\text{Hack}$ 数据。</p>
 <h2 id="解答-注释："><a href="#解答-注释：" class="headerlink" title="解答+注释："></a>解答+注释：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span> <span class="comment">// 包含所有标准库头文件</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> n, loc, i, j; <span class="comment">// 定义变量n、loc、i、j</span></span><br><span class="line">    string str, t; <span class="comment">// 定义字符串变量str和t</span></span><br><span class="line">    cin &gt;&gt; n &gt;&gt; str; <span class="comment">// 从标准输入读取整数n和字符串str</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 外层循环，从1到n</span></span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="comment">// 内层循环，从1到n-i</span></span><br><span class="line">        <span class="keyword">for</span>(j = <span class="number">1</span>; j &lt;= n - i; j++) &#123;</span><br><span class="line">            <span class="comment">// 获取从位置j开始的长度为i的子字符串，并存储在t中</span></span><br><span class="line">            t = str.<span class="built_in">substr</span>(j, i);</span><br><span class="line"><span class="comment">//            cout &lt;&lt; t &lt;&lt; &#x27;\n&#x27;; // 输出子字符串，用于调试</span></span><br><span class="line">            <span class="comment">// 在str中查找t，从位置loc+1开始查找，如果找到则返回位置，否则返回-1</span></span><br><span class="line">            loc = str.<span class="built_in">find</span>(t, loc + <span class="number">1</span>);</span><br><span class="line">            <span class="comment">// 如果loc大于等于0，说明找到了重复的子字符串，跳出内层循环</span></span><br><span class="line">            <span class="keyword">if</span>(loc &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 如果内层循环正常结束，说明没有找到重复的子字符串，输出i并跳出外层循环</span></span><br><span class="line">        <span class="keyword">if</span>(j == n - i + <span class="number">1</span>) &#123;</span><br><span class="line">            cout &lt;&lt; i;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">// 程序结束</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></h2>
       </section>
 
@@ -171,8 +176,8 @@
     
     <div class="card-text">
       
-        <a href="/2024/07/26/hello-world/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">Hello Blog</h2>
+        <a href="/2020/03/01/%E6%B4%9B%E8%B0%B7P5832%E9%A2%98%E8%A7%A3/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">洛谷P5832题解</h2>
         </a>
       
       <div class="card-text--row">Newer</div>
@@ -186,8 +191,8 @@
     
     <div class="card-text">
       
-        <a href="/2020/03/01/%E6%B4%9B%E8%B0%B7P8813%E9%A2%98%E8%A7%A3/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">洛谷P8813题解</h2>
+        <a href="/2020/03/01/%E6%B4%9B%E8%B0%B7P1765%E9%A2%98%E8%A7%A3/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">洛谷P1765题解</h2>
         </a>
       
       <div class="card-text--row">Older</div>
